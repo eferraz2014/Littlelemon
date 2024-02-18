@@ -28,6 +28,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+USE_THOUSAND_SEPARATOR = True
+USE_L10N = True
 
 # Application definition
 

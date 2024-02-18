@@ -1,6 +1,12 @@
+from django.contrib.auth.models import User
 from django.db import models
 from datetime import datetime
 # Create your models here.
+class UserModel(User):
+    class Meta:
+        proxy = True
+    def __str__(self):
+         return self.username
 
 class BookingTable(models.Model):
     name = models.CharField(max_length=100)
