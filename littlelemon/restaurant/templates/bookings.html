@@ -9,7 +9,7 @@
     <div class="row">
       <!--Begin col-->
       <div class="column">
-        <pre id="bookings"></pre>
+        <pre id="booking"></pre>
       </div>
       <!--End col-->
 
@@ -32,13 +32,13 @@
   </article>
 </section>
 <script>
-  const bookings = JSON.parse('{{ bookings|safe }}')
-  console.log(bookings);
-  let pretty_json = JSON.stringify(bookings,null,2)
+  const booking = JSON.parse('{{ booking|safe }}')
+  console.log(booking);
+  let pretty_json = JSON.stringify(booking,null,2)
   if(pretty_json=='[]'){
-    pretty_json = "No bookings";
+    pretty_json = "No booking";
   }
-  document.getElementById('bookings').innerHTML = pretty_json
+  document.getElementById('booking').innerHTML = pretty_json
 </script>
 {% endblock %}
 

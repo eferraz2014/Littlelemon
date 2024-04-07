@@ -1,31 +1,22 @@
-from django.forms import ModelForm
-from .models import BookingTable, Menu, MenuTableSelection,UserModel
+from django import forms
+from .models import Booking, MenuItem , MenuSelection,UserModel
 # Create your forms here.
 
-
-class UserModelForm(ModelForm):
+class UserModelForm(forms.ModelForm):
     class Meta:
         model = UserModel
         fields = "__all__"
 
-class LoginForm(ModelForm):
-    class Meta:
-        model = UserModel
-        fields = {'username', 'password'}
+class LoginForm(forms.Form):
+    username = forms.CharField(label = 'Nombre de usuario')
+    password = forms.CharField(label = 'Contraseña', widget = forms.PasswordInput)
 
-class BookingTableForm(ModelForm):
+class BookingForm(forms.ModelForm):
     class Meta:
-        model = BookingTable
+        model = Booking
         fields = "__all__"
 
-
-class MenuForm(ModelForm):
+class MenuForm(forms.ModelForm):
     class Meta:
-        model = Menu
-        fields = "__all__"
-
-
-class MenuTableSelectionForm(ModelForm):
-    class Meta:
-        model = MenuTableSelection
+        model = MenuItem
         fields = "__all__"
